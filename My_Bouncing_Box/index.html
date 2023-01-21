@@ -1,0 +1,36 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >bobonaza_s</div>
+  <script type="text/javascript">
+    let resume = document.getElementById("my_bouncing_box")
+    let position = 0;
+    let T = 60;
+    // let hight = window.innerHeight;
+    // let width = window.innerWidht;
+    
+    let xPosition = 10;
+    let yPosition = 10;
+    let xSpeed = 4;
+    let ySpeed = 4;
+
+    function newing(){
+      resume.style.left = xPosition ;
+      resume.style.top = yPosition ;
+    }
+
+ 
+
+    setInterval(function(){
+      if(xPosition + resume.clientWidth >= window.innerWidth || xPosition <= 0){
+        xSpeed = -xSpeed;
+      }
+      if(yPosition + resume.clientHeight >= window.innerHeight || yPosition <= 0){
+        ySpeed = -ySpeed;
+      }
+      xPosition += xSpeed;
+      yPosition += ySpeed;
+
+      newing(); 
+    },1000/T)
+    
+  </script>
+</html>
